@@ -1,0 +1,11 @@
+spring:
+ jpa:
+  show-sql: true
+  properties:
+   hibernate:
+    format_sql: true
+  defer-datasource-initialization: true
+    
+# spring.jpa.defer-datasource-initialization:
+# 데이터소스 초기화를 지연시킬지 여부를 설정
+# 일반적으로 스페이스를 사용하는 것이 권장되는 방식

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.junyihong.spring_boot.dao.ISimpleBbsDao">
+		<select id="listDao" resultType="com.junyihong.spring_boot.dto.SimpleBbsDto">
+			SELECT * FROM SIMPLE_BBS ORDER BY ID DESC
+		</select>
+		<select id="viewDao" resultType="com.junyihong.spring_boot.dto.SimpleBbsDto">
+			SELECT * FROM SIMPLE_BBS WHERE ID = #{param1}
+		</select>
+		<insert id="writeDao">
+			INSERT INTO SIMPLE_BBS (ID, WRITER, TITLE, CONTENT)
+			VALUES (SIMPLE_BBS_SEQ.NEXTVAL, #{param1}, #{param2}, #{param3})
+		</insert>
+		<delete id="deleteDao">
+			DELETE FROM SIMPLE_BBS WHERE ID = #{param1}
+		</delete>
+		
+		
+	</mapper>
+<!-- 
+	 CDATA 섹션은 <![CDATA[로 시작하고 ]]> 끝나는 내용을 감싸는 역할을 합니다.
+	 이렇게 하면 내용 안에 포함된 특수문자가 XML 파서에 의해 해석되지 않고
+	 원래의 문자 그대로 유지됩니다.
+-->

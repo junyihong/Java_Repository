@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative] [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.study.springboot" level="info"/>
+
+    <!-- log4j2-jdbc4 -->
+    <logger name="jdbc" level="OFF" />
+    <logger name="jdbc.sqlonly" level="OFF" />
+    <logger name="jdbc.sqltiming" level="DEBUG" />
+    <logger name="jdbc.resultset" level="OFF" />
+    <logger name="jdbc.resultsettable" level="DEBUG" />
+    <logger name="jdbc.connection" level="OFF" />
+    <!-- log4j2-jdbc4 -->
+    
+    <root level="off">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
+
+
+<!-- 로그 레벨은 다음과 같은 계층 구조를 가지고 있습니다. (상위에서 하위로) :
+TRACE
+DEBUG
+INFO
+WARN
+ERROR
+FATAL
+OFF
+각 로그 레벨은 상위 레벨보다 더 상세한 로그 정보를 포함하며, 레벨이 낮을 수록 더많은
+로그가 출력됩니다.
+-->

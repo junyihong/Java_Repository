@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.junyihong.spring_boot.jdbc.IMyUserDao">
+		<select id="list" resultType="com.junyihong.spring_boot.jdbc.MyUserDTO">
+			<![CDATA[
+			SELECT ID, NAME FROM MYUSER
+			]]>
+		</select>
+	</mapper>
+<!-- 
+	 CDATA 섹션은 <![CDATA[로 시작하고 ]]> 끝나는 내용을 감싸는 역할을 합니다.
+	 이렇게 하면 내용 안에 포함된 특수문자가 XML 파서에 의해 해석되지 않고
+	 원래의 문자 그대로 유지됩니다.
+-->
